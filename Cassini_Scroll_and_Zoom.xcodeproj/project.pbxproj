@@ -24,6 +24,7 @@
 		9D93E445210B4BDD005A0333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D93E44C210B4DBF005A0333 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9D93E44E210B53BD005A0333 /* DemoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
+		9D93E450210B62CD005A0333 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		9D93E42D210B4BDB005A0333 = {
 			isa = PBXGroup;
 			children = (
+				9D93E450210B62CD005A0333 /* README.md */,
 				9D93E438210B4BDB005A0333 /* Cassini_Scroll_and_Zoom */,
 				9D93E437210B4BDB005A0333 /* Products */,
 			);
