@@ -36,7 +36,7 @@ class ImageViewController: UIViewController {
         didSet {
             scrollView.delegate = self
             scrollView.minimumZoomScale = 0.03
-            scrollView.maximumZoomScale = 1.0
+            scrollView.maximumZoomScale = 10.0
             scrollView.contentSize = imageView.frame.size
             scrollView.addSubview(imageView)
         }
@@ -73,4 +73,14 @@ extension ImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        centerScrollViewContents()
+    }
+
+    private func centerScrollViewContents() {
+        imageView.frame.origin.x = max(0, (scrollView.bounds.width - imageView.frame.size.width) / 2)
+        imageView.frame.origin.y = max(0, (scrollView.bounds.height - imageView.frame.size.height) / 2)
+    }
+
 }
