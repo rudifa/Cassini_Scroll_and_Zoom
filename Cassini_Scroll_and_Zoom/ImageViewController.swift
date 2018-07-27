@@ -31,6 +31,13 @@ class ImageViewController: UIViewController {
 
 
     // view
+
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.addSubview(imageView)
+        }
+    }
+
     private var imageView = UIImageView()
 
     private var image: UIImage? {
@@ -45,7 +52,6 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageView)
         imageURL = DemoURL.Stanford! as URL
     }
 
