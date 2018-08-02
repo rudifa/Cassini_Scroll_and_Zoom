@@ -61,15 +61,22 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageURL = DemoURL.Stanford! as URL
+//        imageURL = DemoURL.Stanford! as URL
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if image == nil {
+        print("--- ImageViewController: viewWillAppear", imageURL as Any)
+//        if image == nil {
             fetchImage()
-        }
+//        }
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+       print("--- ImageViewController: viewWillDisappear")
+    }
+
 }
 
 extension ImageViewController: UIScrollViewDelegate {
