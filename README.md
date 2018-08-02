@@ -37,3 +37,7 @@ func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return imageView
 }
 ```
+
+Continued in **Lecture 8** with a Master/SplitView controller, and queuing the image fetch on a global queue, to preserve the UI responsiveness.
+
+
