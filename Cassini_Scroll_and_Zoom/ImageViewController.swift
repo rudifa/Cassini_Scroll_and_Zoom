@@ -22,9 +22,14 @@ class ImageViewController: UIViewController {
 
     private func fetchImage() {
         if let url = imageURL {
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            // fetching might take a long time and block the Main queue, so dispatch it
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                if let imageData = urlContents, url == self?.imageURL { // url == self?.imageURL: or did url change in the meantime?
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: imageData) // UI stuff onto the main queue!
+                    }
+                }
             }
         }
     }
