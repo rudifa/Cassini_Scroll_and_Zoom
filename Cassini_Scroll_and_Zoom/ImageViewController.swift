@@ -20,9 +20,12 @@ class ImageViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     private func fetchImage() {
         if let url = imageURL {
             // fetching might take a long time and block the Main queue, so dispatch it
+            activityIndicator.startAnimating()
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 let urlContents = try? Data(contentsOf: url)
                 if let imageData = urlContents, url == self?.imageURL { // url == self?.imageURL: or did url change in the meantime?
@@ -61,6 +64,7 @@ class ImageViewController: UIViewController {
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            activityIndicator?.stopAnimating()
         }
     }
 
