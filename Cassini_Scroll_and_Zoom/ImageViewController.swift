@@ -29,14 +29,18 @@ class ImageViewController: UIViewController {
         }
     }
 
+    @IBAction func doubleTap(_ sender: UITapGestureRecognizer) {
+        print("doubleTap")
+        fetchImage()
+    }
 
     // view
 
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 0.03
-            scrollView.maximumZoomScale = 1.0
+            scrollView.minimumZoomScale = 1.0
+            scrollView.maximumZoomScale = 10.0 // note - for scale < 1, needs centering
             scrollView.contentSize = imageView.frame.size
             scrollView.addSubview(imageView)
         }

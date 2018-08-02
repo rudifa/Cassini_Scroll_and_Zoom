@@ -23,6 +23,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="GFA-ep-oUa" firstAttribute="top" secondItem="I5D-XS-M9X" secondAttribute="top" id="6mh-lL-ztC"/>
                             <constraint firstAttribute="trailing" secondItem="GFA-ep-oUa" secondAttribute="trailing" id="XDj-Vm-Z0b"/>
@@ -30,12 +31,20 @@
                             <constraint firstItem="GFA-ep-oUa" firstAttribute="leading" secondItem="I5D-XS-M9X" secondAttribute="leading" id="wUJ-cv-gX5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obP-kt-T09"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Uvs-wD-yBt" appends="YES" id="egm-iv-VNb"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="GFA-ep-oUa" id="u8Y-9r-eBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9c-0L-cjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Uvs-wD-yBt">
+                    <connections>
+                        <action selector="doubleTap:" destination="G81-fT-594" id="xGd-f7-y7E"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="76" y="130.88455772113943"/>
         </scene>
